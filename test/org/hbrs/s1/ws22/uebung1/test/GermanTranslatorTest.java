@@ -10,7 +10,8 @@ class GermanTranslatorTest {
     void translateNumber() {
         GermanTranslator translator = new GermanTranslator();
         assertEquals("zwei",translator.translateNumber(2));
-        assertEquals("Übersetzung der Zahl -1 nicht möglich(1.0)",translator.translateNumber(-1));
-        assertEquals("Übersetzung der Zahl 12 nicht möglich(1.0)",translator.translateNumber(12));
+        assertEquals("Übersetzung der Zahl -1 nicht möglich (1.0)",translator.translateNumber(-1));
+        assertEquals("Übersetzung der Zahl 12 nicht möglich (1.0)",translator.translateNumber(12));
+        assertEquals("Übersetzung der Zahl 0 nicht möglich (1.0)",translator.translateNumber(0));
     }
 }
