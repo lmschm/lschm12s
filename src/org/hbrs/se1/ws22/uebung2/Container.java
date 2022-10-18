@@ -4,27 +4,6 @@ import java.util.LinkedList;
 
 public class Container {
 
-    public static void main(String[] args) throws ContainerException {
-        Container c = new Container();
-        Member m1 = new ConcreteMember(1);
-        Member m2 = new ConcreteMember(2);
-        Member m3 = new ConcreteMember(3);
-
-        c.addMember(m1);
-        c.addMember(m2);
-        c.dump();
-        c.deleteMember(1);
-        c.dump();
-        c.addMember(m2);
-        c.dump();
-        c.addMember(m3);
-        c.addMember(m1);
-        c.dump();
-        c.deleteMember(3);
-        c.dump();
-        System.out.println(c.size());
-    }
-
     LinkedList<Member> liste;
 
    public Container() {
