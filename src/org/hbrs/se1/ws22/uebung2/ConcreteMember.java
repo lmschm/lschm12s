@@ -4,7 +4,7 @@ public class ConcreteMember implements Member{
 
     private Integer id;
 
-    ConcreteMember(Integer id) {
+    public ConcreteMember(Integer id) {
         this.id = id;
     }
 
