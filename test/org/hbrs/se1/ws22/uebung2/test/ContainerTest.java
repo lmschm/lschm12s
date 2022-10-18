@@ -59,8 +59,4 @@ class ContainerTest {
         assertEquals(3,container.size());
     }
 
-    @Test
-    void dump() {
-
-    }
 }
