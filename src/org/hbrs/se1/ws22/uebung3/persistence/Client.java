@@ -17,7 +17,7 @@ public class Client {
         Main.setStrategy(strategy);
     }
 
-    public static void display() throws ContainerException {
+    public static void display() {
         List<Member> liste = Main.container.getCurrentList();
 
         Main.view.dump(liste);
