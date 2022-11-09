@@ -1,4 +1,4 @@
-package org.hbrs.se1.ws22.uebung4selber;
+package org.hbrs.se1.ws22.uebung4.Model.entities;
 
 public interface Mitarbeiter {
 	
@@ -9,7 +9,8 @@ public interface Mitarbeiter {
 	String getNachname();
 	String getRolle();
 	String getAbteilung();
-	
+	String[][] getExpertisen();
+
 	public String toString();
 
 }

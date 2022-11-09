@@ -1,4 +1,4 @@
-package org.hbrs.se1.ws22.uebung4selber;
+package org.hbrs.se1.ws22.uebung4.Model.entities;
 
 import java.io.Serializable;
 
@@ -10,17 +10,34 @@ public class MitarbeiterKonkret implements Mitarbeiter,Serializable {
 	private String nachname = "";
 	private String rolle = "";
 	private String abteilung = "";
-	//expertise
+	private String[][] expertisen;
 	
-	public MitarbeiterKonkret(Integer id, String vorname, String nachname, String rolle, String abteilung){
+	public MitarbeiterKonkret(Integer id, String vorname, String nachname, String rolle, String abteilung, String[][] expertisen){
 		this.id = id;
 		this.vorname = vorname;
 		this.nachname = nachname;
 		this.abteilung = abteilung;
 		this.rolle = rolle;
-		//expertise
+		this.expertisen = expertisen;
+	}
+	@Override
+	public String[][] getExpertisen() {
+
+		return expertisen;
 	}
 
+	public static String getExpertisenAlsString(Mitarbeiter m) {
+		String expertisen = "";
+		for (int i = 0; i < m.getExpertisen().length; i++) {
+			expertisen += m.getExpertisen()[i][0] + ", Level: ";
+			expertisen += m.getExpertisen()[i][1] + "\t";
+		}
+		return expertisen;
+	}
+
+	public void setExpertisen(String[][] expertisen) {
+		this.expertisen = expertisen;
+	}
 	@Override
 	public Integer getID() { 
 		return this.id;
@@ -32,8 +49,11 @@ public class MitarbeiterKonkret implements Mitarbeiter,Serializable {
 
 	@Override
 	public String toString() {
-
-		return "" + id + "\t" + vorname + "\t" + nachname + "\t" + rolle + "\t" + abteilung ;
+		String s = "" + id + " " + vorname + " " + nachname + " " + rolle + " " + abteilung;
+		for(int i = 0; i < expertisen[0].length; i++) {
+				s += " " + expertisen[i][0] + " : "+ expertisen[i][1];
+		}
+		return s;
 	}
 	@Override
 	public String getVorname() {

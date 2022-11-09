@@ -1,5 +1,7 @@
-package org.hbrs.se1.ws22.uebung4selber;
+package org.hbrs.se1.ws22.uebung4.Model;
 
+
+import org.hbrs.se1.ws22.uebung4.Model.exceptions.PersistenceException;
 
 import java.io.*;
 import java.util.List;
