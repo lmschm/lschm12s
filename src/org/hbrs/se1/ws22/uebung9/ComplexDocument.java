@@ -1,8 +1,5 @@
 package org.hbrs.se1.ws22.uebung9;
 
-import org.w3c.dom.Text;
-
-import java.io.UnsupportedEncodingException;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -24,20 +21,16 @@ public class ComplexDocument implements  Dokument{
     @Override
     public int traversierung() {
         int anzahl = 0;
-        try {
-            for (int j = 0; j < list.size(); j++) {
-                if (list.get(j) instanceof ComplexDocument) {
-                    anzahl += list.get(j).traversierung();
-                } else if (list.get(j) instanceof GraficDokument) {
-                    anzahl += list.get(j).traversierung();
-                } else if (list.get(j) instanceof TextDokument) {
-                    anzahl += list.get(j).traversierung();
-                } else {
-                    anzahl += 0;
-                }
+        for (int j = 0; j < list.size(); j++) {
+            if (list.get(j) instanceof ComplexDocument) {
+                anzahl += list.get(j).traversierung();
+            } else if (list.get(j) instanceof GraficDokument) {
+                anzahl += list.get(j).traversierung();
+            } else if (list.get(j) instanceof TextDokument) {
+                anzahl += list.get(j).traversierung();
+            } else {
+                anzahl += 0;
             }
-        } catch (UnsupportedEncodingException e) {
-            throw new RuntimeException(e);
         }
         return anzahl;
     }
